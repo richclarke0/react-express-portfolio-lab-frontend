@@ -1,12 +1,12 @@
 
-import { useState, useEffect } from "react
+import { useState, useEffect } from "react"
 
 export default function Projects(props) {
     //state
     const [projects, setProjects] = useState(null)
 
     //create function to make api call
-    const getProjectsData = asynce() => {
+    const getProjectsData = async () => {
         //api call response
         const response = await fetch(props.URL + "projects")
         //turn response into javascript object
@@ -16,7 +16,7 @@ export default function Projects(props) {
     }
 
     //initial call
-    useEffect(() => getProjectsData(), [])
+    useEffect(() => {getProjectsData()}, [])
 
     //define function to return
     const loaded = () => {
@@ -33,7 +33,7 @@ export default function Projects(props) {
             </div>
         ))
 
-        return projects ? loaded() : <h1>Loading...</h1>
     }
+    return projects ? loaded() : <h1>Loading...</h1>
 
 }
