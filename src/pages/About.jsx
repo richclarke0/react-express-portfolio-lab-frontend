@@ -1,5 +1,4 @@
-import React from "react";
-import {useState,useEffect} from React
+import {useState,useEffect} from "react"
 
 export default function About(props) {
     //here is our state
@@ -8,7 +7,7 @@ export default function About(props) {
     //create function for api call
     const getAboutData = async () => {
         // make api call get response 
-        const response = await fetch(`${props.url}about`)
+        const response = await fetch(props.URL + "about")
         //jsonify
         const data = await response.json()
         //set about state to the data
@@ -16,17 +15,17 @@ export default function About(props) {
     }
     
     //make initial call for data inside useEffect so it only runs at page load
-    useEffect(()=> getAboutData(), [])
+    useEffect(() => {getAboutData()}, [])
 
     //define a function that will return the JSX needed once we get the data
     
-    const loaded = () => {
+    const loaded = () => (
         <div>
             <h2>{about.name}</h2>
             <h3>{about.email}</h3>
             <p>{about.bio}</p>
         </div>
-    }
+    )
 
     //if data arrives return loaded, else loading
     return about ? loaded() : <h1>Loading...</h1>
