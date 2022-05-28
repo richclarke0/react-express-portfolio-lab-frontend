@@ -1,5 +1,6 @@
 
 import { useState, useEffect } from "react"
+import Main from "../components/Main"
 
 export default function Projects(props) {
     //state
@@ -21,7 +22,7 @@ export default function Projects(props) {
     //define function to return
     const loaded = () => {
         return projects.map((project) => (
-            <div>
+            <Main>
                 <h1>{project.name}</h1>
                 <img src={project.image} />
                 <a href={project.git}>
@@ -30,7 +31,7 @@ export default function Projects(props) {
                 <a href={project.live}>
                     <button>live site</button>
                 </a>
-            </div>
+            </Main>
         ))
 
     }

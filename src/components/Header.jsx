@@ -1,7 +1,7 @@
 import {Link} from "react-router-dom"
 import styled from "styled-components"
 
-const navStyle = styled.div`
+const NavStyle = styled.div`
 display: flex;
 justify-content: space-around;
 border: 3px solid black;
@@ -10,6 +10,15 @@ width: 90%;
 margin: auto;
 font-style: italic;
 flex-flow: row nowrap;
+`
+
+const HeaderArea = styled.div`
+min-height: 160px;
+// border: 1px solid black  
+display: flex;
+flex-flow: column;
+justify-content: center;
+align-items: center;
 `
 
 export default function Header(props) {
@@ -24,13 +33,19 @@ export default function Header(props) {
     // }
     // would have <nav style={navStyle}> to use it
     return (
-    <header>
-        <h1>My portfolio page</h1>
-        <navStyle>
-                <Link to="/">HOME</Link>
-                <Link to="/about">ABOUT</Link>
-                <Link to="/projects">PROJECTS</Link>
-        </navStyle>
-    </header>
+    <HeaderArea>
+        <h1>Rich's Portfolio Page (Kinda)</h1>
+        <NavStyle>
+                <div>
+                    <Link to="/">HOME</Link>
+                </div>
+                <div>
+                    <Link to="/about">ABOUT</Link>
+                </div>
+                <div>
+                    <Link to="/projects">PROJECTS</Link>
+                </div>
+        </NavStyle>
+    </HeaderArea>
         )
 }
