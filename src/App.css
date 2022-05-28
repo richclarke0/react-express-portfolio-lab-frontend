@@ -40,3 +40,18 @@
 button {
   font-size: calc(10px + 2vmin);
 } */
+@import url('https://fonts.googleapis.com/css2?family=Source+Code+Pro&display=swap');
+
+html {
+  background-image: url("/bg.jpeg");
+  background-position:top;
+  background-repeat: no-repeat;
+  background-size:100vw;
+  color: white;
+}
+
+
+body {
+  background-color: rgba(0,0,0,.7 ); 
+  font-family: 'Source Code Pro', monospace;  
+}

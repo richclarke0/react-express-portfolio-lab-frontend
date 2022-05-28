@@ -1,4 +1,5 @@
 import {useState,useEffect} from "react"
+import AboutContainer from "../components/AboutContainer"
 import Main from "../components/Main"
 
 export default function About(props) {
@@ -21,13 +22,15 @@ export default function About(props) {
     //define a function that will return the JSX needed once we get the data
     
     const loaded = () => (
-        <Main>
+        <AboutContainer>
             <h2>{about.name}</h2>
+            <img src={about.headshot} alt="" />
             <h3>{about.email}</h3>
             <p>{about.bio}</p>
-        </Main>
+
+        </AboutContainer>
     )
 
     //if data arrives return loaded, else loading
-    return about ? loaded() : <h1>Loading...</h1>
+    return about ? loaded() : <Main>Loading...</Main>
 }
