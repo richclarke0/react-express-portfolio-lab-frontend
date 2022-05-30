@@ -8,7 +8,7 @@ color: white;
 display: flex;
 flex-flow: column;
 align-items: center;
-    gap: .5em;
+gap: .5em;
 img {
     max-width: 100%;
     border-radius: 10px;

@@ -11,8 +11,8 @@ font-style: italic;
 flex-flow: row nowrap;
 font-size: 20px;
 font-weight: bold;
-a { 
-    color: white; 
+a {
+    color: white;
   }
 `
 
